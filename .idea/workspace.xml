@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d10523c-d50d-4cec-8678-5ac28af6ecb8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config/initializers/application_version.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/locales/ru.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/about.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/about/author.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/application.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/application.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/locales/ru.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/locales/ru.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +145,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1589630222441</updated>
-      <workItem from="1589630225824" duration="4092000" />
+      <workItem from="1589630225824" duration="4240000" />
     </task>
     <servers />
   </component>
