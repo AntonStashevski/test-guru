@@ -9,11 +9,15 @@ category1 = Category.create(name: 'Backend')
 category2 = Category.create(name: 'Frontend')
 category3 = Category.create(name: 'Machine Learning')
 
-test1 = Test.create(title: 'PHP', difficulty: 1, category_id: category1.id)
-test2 = Test.create(title: 'RubyOnRails', difficulty: 2, category_id: category1.id)
-test3 = Test.create(title: 'CSS', difficulty: 0, category_id: category2.id)
-test4 = Test.create(title: 'HTML', difficulty: 0, category_id: category2.id)
-test5 = Test.create(title: 'Python', difficulty: 1, category_id: category3.id)
+user1 = User.create(name: 'Anton', password: '123456', role: 0)
+user2 = User.create(name: 'Gena', password: '123456', role: 1)
+user3 = User.create(name: 'Sveta', password: '123456', role: 1)
+
+test1 = Test.create(title: 'PHP', difficulty: 1, category_id: category1.id, user_id: user1.id)
+test2 = Test.create(title: 'RubyOnRails', difficulty: 2, category_id: category1.id, user_id: user2.id)
+test3 = Test.create(title: 'CSS', difficulty: 0, category_id: category2.id, user_id: user2.id)
+test4 = Test.create(title: 'HTML', difficulty: 0, category_id: category2.id, user_id: user2.id)
+test5 = Test.create(title: 'Python', difficulty: 1, category_id: category3.id, user_id: user3.id)
 
 question1 = Question.create(body: 'Что такое short tags и как его использовать в PHP?', test_id: test1.id)
 question2 = Question.create(body: 'Как изолировать PHP код от HTML? Для чего это нужно?', test_id: test1.id)
@@ -25,10 +29,6 @@ question7 = Question.create(body: 'Вопрос по HTML №1', test_id: test4.
 question8 = Question.create(body: 'Вопрос по HTML №2', test_id: test4.id)
 question9 = Question.create(body: 'Вопрос по Python №1', test_id: test5.id)
 question10 = Question.create(body: 'Вопрос по Python №2', test_id: test5.id)
-
-user1 = User.create(name: 'Anton', password: '123456', role: 0)
-user2 = User.create(name: 'Gena', password: '123456', role: 1)
-user3 = User.create(name: 'Sveta', password: '123456', role: 1)
 
 Answer.create(body: 'short tags - это короткий синтаксис позволяющий использовать <? и тем самым сократить запись', question_id: question1.id, correct: true)
 Answer.create(body: 'неправильный ответ', question_id: question1.id, correct: false)
