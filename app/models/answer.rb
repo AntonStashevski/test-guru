@@ -1,3 +1,3 @@
 class Answer < ApplicationRecord
-  belongs_to :answer
+  belongs_to :question # между вопросами и ответами
 end
