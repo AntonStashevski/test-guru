@@ -7,8 +7,10 @@ class User < ApplicationRecord
   has_many :tests_user # между тестами и проходящими их пользователей
   has_many :tests, through: :tests_user # между тестами и проходящими их пользователей
 
-  def passed_tests_by_level(difficulty)
-    Test.joins('JOIN results ON tests.id = results.test_id')
-        .where('results.user_id = ? AND tests.difficulty = ?', id, difficulty)
+  validates :email, presence: true
+
+  def user_tests(level)
+    self.tests.where(difficulty: level)
   end
+
 end
