@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200525150722) do
+ActiveRecord::Schema.define(version: 20200527190801) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,9 +25,10 @@ ActiveRecord::Schema.define(version: 20200525150722) do
   end
 
   create_table "categories", force: :cascade do |t|
-    t.string "name", null: false
+    t.string "title", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["title"], name: "index_categories_on_title", unique: true
   end
 
   create_table "questions", force: :cascade do |t|
@@ -46,6 +47,7 @@ ActiveRecord::Schema.define(version: 20200525150722) do
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.index ["category_id"], name: "index_tests_on_category_id"
+    t.index ["title", "difficulty"], name: "index_tests_on_title_and_difficulty", unique: true
     t.index ["user_id"], name: "index_tests_on_user_id"
   end
 
@@ -62,6 +64,8 @@ ActiveRecord::Schema.define(version: 20200525150722) do
     t.integer "role", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
   add_foreign_key "answers", "questions"
