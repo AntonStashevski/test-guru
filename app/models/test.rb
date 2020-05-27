@@ -13,7 +13,7 @@ class Test < ApplicationRecord
   scope :medium_tests, -> { where(difficulty: 2..4) }
   scope :hard_tests, -> { where(difficulty: 5..Float::INFINITY) }
 
-  scope :test_by_category_name, ->(category_name) { joins(:category).where(categories: { title: category_name }) }
+  scope :test_by_category_name, ->(category_name) { joins(:category).where(categories: { title: category_name }).order(title: :desc).pluck(:title) }
 
   validates :difficulty, numericality: { only_integer: true, greater_than: 0, message: "Значение difficulty должно быть целым положительным числом" }
   validates :title, presence: true, uniqueness: { scope: :difficulty, message: "Тест с таким title и difficulty уже существует" }
