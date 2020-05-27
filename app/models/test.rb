@@ -9,17 +9,13 @@ class Test < ApplicationRecord
   has_many :tests_user # между тестами и проходящими их пользователей
   has_many :users, through: :tests_user # между тестами и проходящими их пользователей
 
-  scope :easy_tests, -> { difficulty(0..1) }
-  scope :medium_tests, -> { difficulty(2..4) }
-  scope :hard_tests, -> { difficulty(5..Float::INFINITY) }
-  scope :test_by_category, -> { joins('JOIN categories ON tests.category_id = categories.id') }
-  scope :test_by_category_name, ->(category_name) {test_by_category.where('categories.title = ?', category_name) }
+  scope :easy_tests, -> { where(difficulty: 0..1) }
+  scope :medium_tests, -> { where(difficulty: 2..4) }
+  scope :hard_tests, -> { where(difficulty: 5..Float::INFINITY) }
 
-  validates :difficulty, numericality: { only_integer: true, greater_than: 0, message: "Значение difficulty должно быть целым положительным числом"}
-  validates :title, presence: true, uniqueness: { scope: :difficulty, message: "Тест с таким title и difficulty уже существует"}
+  scope :test_by_category_name, ->(category_name) { joins(:category).where(categories: { title: category_name }) }
 
-  def self.difficulty(level)
-    where(difficulty: level)
-  end
+  validates :difficulty, numericality: { only_integer: true, greater_than: 0, message: "Значение difficulty должно быть целым положительным числом" }
+  validates :title, presence: true, uniqueness: { scope: :difficulty, message: "Тест с таким title и difficulty уже существует" }
 
 end
