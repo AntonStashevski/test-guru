@@ -2,34 +2,45 @@
 
 class QuestionsController < ApplicationController
   skip_before_action :verify_authenticity_token
-  before_action :find_test, only: %i[show index new create]
-  before_action :find_question, only: %i[destroy]
+  before_action :find_test, only: %i[show index new create edit update]
+  before_action :find_question, only: %i[destroy edit update]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
-  def new; end
+  def new
+    @question = @test.questions.new
+  end
 
   def show # Просмотра конкретного вопроса теста
-    render plain: @test.questions.find(params[:id]).inspect
+    @question = @test.questions.find(params[:id])
   end
 
   def create # Создание вопроса
-    question = @test.questions.new(question_params)
-    if question.save
+    @question = @test.questions.new(question_params)
+    if @question.save
       redirect_to test_questions_path
     else
-      Render plain question.errors.full_messages
+      render :new
     end
-
   end
 
+  def update
+    if @question.update(question_params)
+      redirect_to test_questions_path
+    else
+      render :edit
+    end
+  end
+
+  def edit; end
+
   def destroy # Удаление вопроса
-    @question.delete
+    @question.destroy
     redirect_to test_questions_path
   end
 
   def index # Просмотра списка вопросов теста
-    render plain: @test.questions.inspect
+    @questions = @test.questions
   end
 
   private
