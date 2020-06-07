@@ -1,0 +1,13 @@
+<h1> <%= @test_passage.test.title %> test results </h1>
+<% if @test_passage.passed? %>
+  <h2>
+    Tест успешно пройден
+  </h2>
+  <h3 style = 'color: green' ><%= result_statistic %></h3>
+<% else %>
+  <h2>
+    Tест не пройден
+  </h2>
+  <h3 style = 'color: red' ><%= result_statistic %></h3>
+<% end %>
+<%= link_to 'All Tests', tests_path %>
