@@ -29,6 +29,8 @@ question7 = Question.create(body: 'Вопрос по HTML №1', test_id: test4.
 question8 = Question.create(body: 'Вопрос по HTML №2', test_id: test4.id)
 question9 = Question.create(body: 'Вопрос по Python №1', test_id: test5.id)
 question10 = Question.create(body: 'Вопрос по Python №2', test_id: test5.id)
+question11 = Question.create(body: 'Вопрос по PHP №1', test_id: test1.id)
+question12 = Question.create(body: 'Вопрос по PHP №2', test_id: test1.id)
 
 Answer.create(body: 'short tags - это короткий синтаксис позволяющий использовать <? и тем самым сократить запись', question_id: question1.id, correct: true)
 Answer.create(body: 'неправильный ответ', question_id: question1.id, correct: false)
@@ -60,9 +62,8 @@ Answer.create(body: 'неправильный ответ', question_id: question
 Answer.create(body: 'Правильный ответ', question_id: question10.id, correct: true)
 Answer.create(body: 'неправильный ответ', question_id: question10.id, correct: false)
 
-TestPassage.create(test_id: test1.id, user_id: user1.id)
-TestPassage.create(test_id: test2.id, user_id: user1.id)
-TestPassage.create(test_id: test3.id, user_id: user1.id)
-TestPassage.create(test_id: test4.id, user_id: user2.id)
-TestPassage.create(test_id: test5.id, user_id: user2.id)
-TestPassage.create(test_id: test1.id, user_id: user3.id)
+Answer.create(body: 'неправильный ответ', question_id: question11.id, correct: false)
+Answer.create(body: 'правильный ответ', question_id: question11.id, correct: true)
+
+Answer.create(body: 'Правильный ответ', question_id: question12.id, correct: true)
+Answer.create(body: 'неправильный ответ', question_id: question12.id, correct: false)

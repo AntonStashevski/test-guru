@@ -1,6 +1,7 @@
-<h1><%= "Tests" %></h1>
-<ul>
-  <% @tests.each do |test| %>
-    <li> <%= test.title %></li>
-  <% end %>
-</ul>
+<table>
+  <tr>
+    <th>Body</th>
+    <th colspan="4">Actions</th>
+  </tr>
+  <%= render @tests %>
+</table>
