@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class QuestionsController < ApplicationController
+  before_action :authenticate_user!
   skip_before_action :verify_authenticity_token
   before_action :find_test, only: %i[show index new create edit update]
   before_action :find_question, only: %i[destroy edit update]
