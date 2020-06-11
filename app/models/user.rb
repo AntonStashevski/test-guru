@@ -7,6 +7,9 @@ class User < ApplicationRecord
   has_many :test_passages # между тестами и проходящими их пользователей
   has_many :tests, through: :test_passages # между тестами и проходящими их пользователей
 
+  has_secure_password
+
+  validates :email, uniqueness: true
   validates :email, presence: true
 
   def user_tests(level)
