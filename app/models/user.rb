@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_secure_password
 
   validates :email, uniqueness: true
+  validates :email, presence: true
 
   def user_tests(level)
     self.tests.where(difficulty: level)
