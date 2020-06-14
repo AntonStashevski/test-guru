@@ -8,7 +8,8 @@ class User < ApplicationRecord
          :registerable,
          :recoverable,
          :rememberable,
-         :validatable
+         :validatable,
+         :confirmable
 
   # принимает в качестве аргумента значение уровня сложности и возвращает список
   # всех Тестов, которые проходил Пользователь на этом уровне сложности
