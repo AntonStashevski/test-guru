@@ -19,7 +19,7 @@ class Admin::QuestionsController < Admin::BaseController
   def create # Создание вопроса
     @question = @test.questions.new(question_params)
     if @question.save
-      redirect_to test_questions_path
+      redirect_to admin_test_questions_path
     else
       render :new
     end
@@ -27,7 +27,7 @@ class Admin::QuestionsController < Admin::BaseController
 
   def update
     if @question.update(question_params)
-      redirect_to test_questions_path
+      redirect_to admin_test_questions_path
     else
       render :edit
     end
@@ -37,7 +37,7 @@ class Admin::QuestionsController < Admin::BaseController
 
   def destroy # Удаление вопроса
     @question.destroy
-    redirect_to test_questions_path
+    redirect_to admin_test_questions_path
   end
 
   def index # Просмотра списка вопросов теста

@@ -16,7 +16,7 @@ class Admin::AnswersController < Admin::BaseController
   def create
     @answer = @question.answers.new(answer_params)
     if @answer.save
-      redirect_to test_question_answers_path(test_id: @answer.question.test, question_id: @answer.question)
+      redirect_to admin_test_question_answers_path(test_id: @answer.question.test, question_id: @answer.question)
     else
       render :new
     end
@@ -24,7 +24,7 @@ class Admin::AnswersController < Admin::BaseController
 
   def update
     if @answer.update(answer_params)
-      redirect_to test_question_answers_path(test_id: @answer.question.test, question_id: @answer.question)
+      redirect_to admin_test_question_answers_path(test_id: @answer.question.test, question_id: @answer.question)
     else
       render :edit
     end
@@ -32,7 +32,7 @@ class Admin::AnswersController < Admin::BaseController
 
   def destroy
     @answer.destroy
-    redirect_to test_question_answers_path(test_id: @answer.question.test, question_id: @answer.question)
+    redirect_to admin_test_question_answers_path(test_id: @answer.question.test, question_id: @answer.question)
   end
 
   private
