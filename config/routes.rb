@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   root to: "tests#index"
 
   resources :tests do
-    resources :questions
+    resources :questions do
+      resources :answers, shallow: true
+    end
 
     member do
       post :start
