@@ -1,4 +1,5 @@
 class AnswersController < ApplicationController
+  before_action :authenticate_user!
 
   before_action :find_test, only: %i[index new create]
   before_action :find_question, only: %i[index new create]

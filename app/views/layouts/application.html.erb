@@ -10,18 +10,13 @@
 
   <body>
     <% if user_signed_in? %>
-      <p class = "nav user">
-        Welcome, <b> <%= current_user.email %> </b> Guru |
-        <%= link_to "Выход", destroy_user_session_path,  method: :delete %>
-      </p>
+      <%= render 'shared/nav' %>
     <% else %>
       <% session[:requested_path] = request.env['PATH_INFO'] %>
-      <p class = "nav user"></p>
     <% end %>
-
-
     <%= render 'shared/flash' %>
     <%= yield %>
     <%= render 'shared/footer' %>
   </body>
 </html>
+
