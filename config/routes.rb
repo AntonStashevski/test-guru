@@ -4,6 +4,10 @@ Rails.application.routes.draw do
 
   devise_for :users, path: :gurus, path_names: { sign_in: :login, sign_out: :logout }
 
+  authenticated :user do
+    root to: "application#index"
+  end
+
   root to: "tests#index"
 
   resources :tests, only: :index do
