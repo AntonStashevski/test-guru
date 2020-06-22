@@ -1,4 +1,4 @@
-<%= form_with model: [@question.test, @question], local: true do |form| %>
+<%= form_with model: [:admin, @question.test, @question], local: true do |form| %>
   <%= render 'errors' %>
 
   <p>

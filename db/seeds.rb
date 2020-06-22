@@ -9,9 +9,9 @@ category1 = Category.create(title: 'Backend')
 category2 = Category.create(title: 'Frontend')
 category3 = Category.create(title: 'Machine Learning')
 
-user1 = User.create(name: 'Anton', password: '123456', role: 0, email: 'anton@gmail.com')
-user2 = User.create(name: 'Gena', password: '123456', role: 1, email: 'gena@gmail.com')
-user3 = User.create(name: 'Sveta', password: '123456', role: 1, email: 'sveta@gmail.com')
+user1 = Admin.create(password: '123456', email: 'anton@gmail.com', first_name: 'Anton', last_name: 'Ivanov')
+user2 = User.create(password: '123456', email: 'gena@gmail.com', first_name: 'Gena', last_name: 'Ivanov')
+user3 = User.create(password: '123456', email: 'sveta@gmail.com', first_name: 'Sveta', last_name: 'Ivanova')
 
 test1 = Test.create(title: 'PHP', difficulty: 2, category_id: category1.id, user_id: user1.id)
 test2 = Test.create(title: 'RubyOnRails', difficulty: 3, category_id: category1.id, user_id: user2.id)

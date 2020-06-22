@@ -2,10 +2,18 @@
 
 Rails.application.routes.draw do
 
+  devise_for :users, path: :gurus, path_names: { sign_in: :login, sign_out: :logout }
+
+  authenticated :user do
+    root to: "application#index"
+  end
+
   root to: "tests#index"
 
-  resources :tests do
-    resources :questions
+  resources :tests, only: :index do
+    resources :questions do
+      resources :answers, shallow: true
+    end
 
     member do
       post :start
@@ -18,11 +26,13 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users, only: :create
-  resources :sessions, only: :create
+  namespace :admin do
+    resources :tests do
+      resources :questions do
+        resources :answers, shallow: true
+      end
+    end
+  end
 
-  get :signup, to: 'users#new'
-  get :login, to: 'sessions#new'
-  get :signout, to: 'sessions#destroy'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

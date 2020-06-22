@@ -1,0 +1,6 @@
+<div>
+  <div class="nav user">
+    Welcome, <b class="nav user-email"><%= current_user.email %></b> Guru |
+    <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+  </div>
+</div>
