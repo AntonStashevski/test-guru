@@ -1,8 +1,8 @@
-<h1><%= "Tests" %></h1>
+<h1><%= t('.header') %></h1>
 <table>
   <tr>
-    <th>Body</th>
-    <th colspan="1">Actions</th>
+    <th><%= t('.body') %></th>
+    <th colspan="1"><%= t('.actions') %></th>
   </tr>
   <%= render @tests %>
 </table>
