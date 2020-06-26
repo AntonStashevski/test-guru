@@ -1,9 +1,9 @@
 <h1>Passing the <%= @test_passage.test.title %> test</h1>
 
-<b><%= "Вопросов: #{@test_passage.questions_size}" %></b>
+<b><%= "Questions: #{@test_passage.questions_size}" %></b>
 
 <p>
-  <b><%= "Вопрос №#{@test_passage.question_number}: " %></b>
+  <b><%= "Question №#{@test_passage.question_number}: " %></b>
   <%= @test_passage.current_question.body %>
 </p>
 
@@ -14,5 +14,5 @@
       <%= b.label %>
     </p>
   <%end %>
-  <p><%= form.submit 'Следующий вопрос' %></p>
+  <p><%= form.submit 'Next question' %></p>
 <% end %>
