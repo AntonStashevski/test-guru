@@ -1,12 +1,12 @@
 <h1> <%= @test_passage.test.title %> test results </h1>
 <% if @test_passage.passed? %>
   <h2>
-    Tест успешно пройден
+    Test passed successfully
   </h2>
   <h3 style = 'color: green' ><%= result_statistic %></h3>
 <% else %>
   <h2>
-    Tест не пройден
+    Test failed
   </h2>
   <h3 style = 'color: red' ><%= result_statistic %></h3>
 <% end %>

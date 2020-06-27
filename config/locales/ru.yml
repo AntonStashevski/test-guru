@@ -1,2 +1,32 @@
 ru:
-  hello: "Привет мир"
+  admin:
+    tests:
+      index:
+        header: 'Тесты'
+        new: 'Новый тест'
+        body: 'Название'
+        difficulty: 'Сложность'
+        questions: 'Вопросы'
+        actions: 'Действия'
+
+      test:
+        edit: 'Редактировать'
+        questions: 'Вопросы'
+        delete: 'Удалить'
+        confirmation: 'Вы уверены?'
+
+      edit:
+        header: 'Редактировать тест:'
+        tests: 'Вернуться к тестам'
+
+      new:
+        header: 'Создать новый тест'
+        tests: 'Вернуться к тестам'
+
+  tests:
+    index:
+      header: 'Тесты'
+      body: 'Тело'
+      actions: 'Действия'
+    test:
+      start: 'Пройти'

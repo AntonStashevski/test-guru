@@ -1,0 +1,10 @@
+ru:
+  activerecord:
+    models:
+      test: 'Тест'
+
+    attributes:
+      test:
+        title: 'Название'
+        difficulty: 'Уровень'
+        category_id: 'Категория'
