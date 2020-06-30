@@ -26,7 +26,21 @@ en:
   tests:
     index:
       header: 'Tests'
-      body: 'Body'
+      title: 'Title'
+      difficulty: 'Difficulty'
+      questions_count: 'Questions count'
       actions: 'Actions'
     test:
       start: 'Start'
+
+    test_passages:
+      show:
+        header: 'You pass %{title} test'
+        questions_count: 'Questions count: %{count}'
+        current_question: 'Current question: %{current}'
+        next: 'Next'
+      result:
+        header: '%{name} test results'
+        tests: 'Tests'
+        success: 'You pass the test'
+        fail: 'Test not passed'

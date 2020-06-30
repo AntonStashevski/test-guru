@@ -1,8 +1,12 @@
-<h1><%= t('.header') %></h1>
+<h1 class="display-4"><%= t('.header') %></h1>
 <table>
-  <tr>
-    <th><%= t('.body') %></th>
-    <th colspan="1"><%= t('.actions') %></th>
-  </tr>
-  <%= render @tests %>
+  <table class = 'table'>
+    <tr>
+      <th scope = 'col'><%= t('.title') %></th>
+      <th scope = 'col'><%= t('.difficulty') %></th>
+      <th scope = 'col'><%= t('.questions_count') %></th>
+      <th scope = 'col'><%= t('.actions') %></th>
+    </tr>
+    <%= render @tests %>
+  </table>
 </table>
