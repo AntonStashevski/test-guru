@@ -23,6 +23,14 @@ en:
         header: 'Create new test'
         tests: 'Back to tests'
 
+    gists:
+      index:
+        header: 'Gists list'
+        question: 'Question'
+        url: 'Url'
+        user: 'User'
+
+
   tests:
     index:
       header: 'Tests'
@@ -34,13 +42,20 @@ en:
       start: 'Start'
 
     test_passages:
+      success: 'Gist created successful: %{url}'
+      fail: 'Gist not created'
       show:
         header: 'You pass %{title} test'
         questions_count: 'Questions count: %{count}'
         current_question: 'Current question: %{current}'
         next: 'Next'
+        question: 'Gist Question'
       result:
         header: '%{name} test results'
         tests: 'Tests'
         success: 'You pass the test'
         fail: 'Test not passed'
+
+    services:
+      gist_question_service:
+        description: 'A question about %{title} from TestGuru'

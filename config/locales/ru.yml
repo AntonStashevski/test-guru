@@ -23,6 +23,13 @@ ru:
         header: 'Создать новый тест'
         tests: 'Вернуться к тестам'
 
+    gists:
+      index:
+        header: 'Gists список'
+        question: 'Вопрос'
+        url: 'Адресс'
+        user: 'Пользователь'
+
   tests:
     index:
       header: 'Тесты'
@@ -34,13 +41,20 @@ ru:
       start: 'Пройти'
 
   test_passages:
+    success: 'Gist создан успешно: %{url}'
+    fail: 'Gist не был создан'
     show:
       header: 'Вы проходите %{title} тест'
       questions_count: 'Кол-во вопросов: %{count}'
       current_question: 'Текущий вопрос: %{current}'
       next: 'Следующий'
+      question: 'Gist вопрос'
     result:
       header: 'Результаты %{name} теста'
       tests: 'Тесты'
       success: 'Вы прошли тест'
       fail: 'Тест не пройден'
+
+  services:
+    gist_question_service:
+      description: 'Вопрос по тесту %{title}'
