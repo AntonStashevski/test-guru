@@ -43,6 +43,9 @@ gem 'rails-i18n'
 gem 'bootstrap', '~> 4.5.0'
 gem 'jquery-rails'
 
+gem 'dotenv-rails'
+gem "octokit", "~> 4.0"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]

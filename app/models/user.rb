@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable,
@@ -16,12 +15,13 @@ class User < ApplicationRecord
   has_many :created_tests, class_name: :Test, foreign_key: :user_id # список тестов созданных пользователем
   has_many :test_passages, dependent: :destroy # между тестами и проходящими их пользователей
   has_many :tests, through: :test_passages, dependent: :destroy # между тестами и проходящими их пользователей
+  has_many :gists, dependent: :destroy
 
   validates :email, uniqueness: true
   validates :email, presence: true
 
   def user_tests(level)
-    self.tests.where(difficulty: level)
+    tests.where(difficulty: level)
   end
 
   def test_passage(test)
@@ -31,5 +31,4 @@ class User < ApplicationRecord
   def admin?
     is_a?(Admin)
   end
-
 end
