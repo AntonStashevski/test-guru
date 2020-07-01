@@ -1,4 +1,6 @@
 <tr>
-  <td><%= test.title %></td>
-  <td><%= button_to t('.start'), start_test_path( test )%></td>
+  <th style='text-align: left'><%= link_to test.title, test_questions_path(test), class:'nav-link' %></th>
+  <th><%= test.difficulty %></th>
+  <th><%= test.questions.count %></th>
+  <th><%= button_to t('.start'), start_test_path(test) %></th>
 </tr>

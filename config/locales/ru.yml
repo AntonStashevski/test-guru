@@ -26,7 +26,21 @@ ru:
   tests:
     index:
       header: 'Тесты'
-      body: 'Тело'
+      title: 'Название'
+      difficulty: 'Сложность'
+      questions_count: 'Кол-во вопросов'
       actions: 'Действия'
     test:
       start: 'Пройти'
+
+  test_passages:
+    show:
+      header: 'Вы проходите %{title} тест'
+      questions_count: 'Кол-во вопросов: %{count}'
+      current_question: 'Текущий вопрос: %{current}'
+      next: 'Следующий'
+    result:
+      header: 'Результаты %{name} теста'
+      tests: 'Тесты'
+      success: 'Вы прошли тест'
+      fail: 'Тест не пройден'

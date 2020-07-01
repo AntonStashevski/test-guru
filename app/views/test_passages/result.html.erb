@@ -1,13 +1,29 @@
-<h1> <%= @test_passage.test.title %> test results </h1>
-<% if @test_passage.passed? %>
-  <h2>
-    Test passed successfully
-  </h2>
-  <h3 style = 'color: green' ><%= result_statistic %></h3>
-<% else %>
-  <h2>
-    Test failed
-  </h2>
-  <h3 style = 'color: red' ><%= result_statistic %></h3>
-<% end %>
-<%= link_to 'All Tests', tests_path %>
+<!--<h1> <%#= @test_passage.test.title %> test results </h1>-->
+<%# if @test_passage.passed? %>
+<!--  <h2>-->
+<!--    Test passed successfully-->
+<!--  </h2>-->
+<!--  <h3 style = 'color: green' ><%#= result_statistic %></h3>-->
+<%# else %>
+<!--  <h2>-->
+<!--    Test failed-->
+<!--  </h2>-->
+<!--  <h3 style = 'color: red' ><%#= result_statistic %></h3>-->
+<%# end %>
+<%#= link_to 'All Tests', tests_path %>
+
+<nav class="navbar navbar-">
+  <span class = "navbar-brand">
+    <%= t('.header', name: @test_passage.test.title) %>
+  </span>
+</nav>
+<div class="text-left p-3">
+  <% if @test_passage.passed? %>
+    <h3><%= t('.success') %></h3>
+    <h3 style = 'color: green' ><%= result_statistic %></h3>
+  <% else %>
+    <h3><%= t('.fail') %></h3>
+    <h3 style = 'color: red' ><%= result_statistic %></h3>
+  <% end %>
+  <p><%= link_to t('.tests'), tests_path, class: 'btn btn-success' %></p>
+</div>
