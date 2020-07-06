@@ -33,7 +33,6 @@ en:
         url: 'Url'
         user: 'User'
 
-
   tests:
     index:
       header: 'Tests'
