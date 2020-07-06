@@ -23,6 +23,9 @@ en:
         header: 'Create new test'
         tests: 'Back to tests'
 
+      form_inline:
+        submit: 'OK'
+
     gists:
       index:
         header: 'Gists list'
@@ -59,3 +62,7 @@ en:
     services:
       gist_question_service:
         description: 'A question about %{title} from TestGuru'
+
+  shared:
+    errors:
+      header: 'Errors count: %{count}'

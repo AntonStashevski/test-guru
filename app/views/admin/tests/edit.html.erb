@@ -1,3 +1,4 @@
 <h1><%= "#{t('.header')} #{@test.title}"%></h1>
+<%= render 'shared/errors', resource: @test %>
 <%= link_to t('.tests'), admin_tests_path %>
 <%= render 'form' %>

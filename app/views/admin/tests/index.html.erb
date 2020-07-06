@@ -1,13 +1,14 @@
 <h1 class="display-4"><%= t('.header') %></h1>
-<table>
-  <table class = 'table'>
-    <tr>
-      <th scope = 'col'><%= t('.title') %></th>
-      <th scope = 'col'><%= t('.difficulty') %></th>
-      <th scope = 'col'><%= t('.questions_count') %></th>
-      <th scope = 'col' colspan="4" class="text-center"><%= t('.actions') %></th>
-    </tr>
-    <%= render @tests %>
-  </table>
-  <h3 class="text-center"><%= link_to t('.new'), new_admin_test_path %></h3>
+
+<%= render 'shared/errors', resource: @test %>
+
+<table class = 'table'>
+  <tr>
+    <th scope = 'col'><%= t('.title') %></th>
+    <th scope = 'col'><%= t('.difficulty') %></th>
+    <th scope = 'col'><%= t('.questions_count') %></th>
+    <th scope = 'col' colspan="4" class="text-center"><%= t('.actions') %></th>
+  </tr>
+  <%= render @tests %>
 </table>
+<h3 class="text-center"><%= link_to t('.new'), new_admin_test_path %></h3>
