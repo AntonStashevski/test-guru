@@ -1,0 +1,26 @@
+<div class = 'row justify-content-center mt-3'>
+  <div class = "col col-md-4" >
+    <h2>Sign up</h2>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "users/shared/error_messages", resource: resource %>
+      <div class ="form-group">
+        <p>
+          <%= f.label :email %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Enter email" %>
+        </p>
+        <p>
+          <%= f.label :password %>
+          <%= f.password_field :password, autocomplete: "new-password", class: "form-control password", placeholder: "Enter password" %>
+        </p>
+        <p>
+          <%= f.label :password_confirmation %>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control confirmation", placeholder: "Confirm password" %>
+          <%= octicon "x", class: 'text-danger hide', :height => 24 %>
+          <%= octicon "check", class: 'text-success hide', :height => 24 %>
+        </p>
+        <%= f.submit "Sign up", class: "btn btn-primary", :height => 24 %>
+      </div>
+    <% end %>
+    <%= render "users/shared/links" %>
+  </div>
+</div>
