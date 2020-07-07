@@ -2,8 +2,8 @@
 
 class Admin::TestsController < Admin::BaseController
 
-  before_action :find_tests, only: %i[index]
-  before_action :find_test, only: %i[show start edit update destroy]
+  before_action :find_tests, only: %i[index update_inline ]
+  before_action :find_test, only: %i[show start edit update destroy update_inline]
   before_action :set_user, only: :start
 
   def index; end
@@ -33,6 +33,14 @@ class Admin::TestsController < Admin::BaseController
       redirect_to admin_tests_path
     else
       render :edit
+    end
+  end
+
+  def update_inline
+    if @test.update(test_params)
+      redirect_to admin_tests_path
+    else
+      render :index
     end
   end
 

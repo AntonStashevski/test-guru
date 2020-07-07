@@ -1,3 +1,8 @@
+<div class="myProgress" style="width: 100%; background-color: #DDDDDD">
+  <%= content_tag :div, class: "progress-bar", style: "width: 1%; height: 10px; background-color: forestgreen; text-align: center", data: {question_number: @test_passage.question_number, questions_number: @test_passage.test.questions.length } do %>
+  <% end %>
+</div>
+
 <nav class="navbar navbar-light">
   <span class = "navbar-brand">
 		<%= t('.header', title: @test_passage.test.title) %>
@@ -7,6 +12,7 @@
     <%= t('.current_question', current: @test_passage.question_number) %>
   </span>
 </nav>
+
 <div class = 'row justify-content-left p-3'>
   <div class = "col col-md-4" >
     <h2><%= @test_passage.current_question.body %></h2>
