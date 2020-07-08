@@ -9,11 +9,13 @@ category1 = Category.create(title: 'Backend')
 category2 = Category.create(title: 'Frontend')
 category3 = Category.create(title: 'Machine Learning')
 
-test1 = Test.create(title: 'PHP', difficulty: 2, category_id: category1.id, user_id: 1)
-test2 = Test.create(title: 'RubyOnRails', difficulty: 3, category_id: category1.id, user_id: 1)
-test3 = Test.create(title: 'CSS', difficulty: 1, category_id: category2.id, user_id: 1)
-test4 = Test.create(title: 'HTML', difficulty: 1, category_id: category2.id, user_id: 1)
-test5 = Test.create(title: 'Python', difficulty: 2, category_id: category3.id, user_id: 1)
+user1 = Admin.create(password: '123456', email: 'dont20031@gmail.com', first_name: 'Anton', last_name: 'Ivanov')
+
+test1 = Test.create(title: 'PHP', difficulty: 2, category_id: category1.id, user_id: user1.id)
+test2 = Test.create(title: 'RubyOnRails', difficulty: 3, category_id: category1.id, user_id: user1.id)
+test3 = Test.create(title: 'CSS', difficulty: 1, category_id: category2.id, user_id: user1.id)
+test4 = Test.create(title: 'HTML', difficulty: 1, category_id: category2.id, user_id: user1.id)
+test5 = Test.create(title: 'Python', difficulty: 2, category_id: category3.id, user_id: user1.id)
 
 question1 = Question.create(body: 'Что такое short tags и как его использовать в PHP?', test_id: test1.id)
 question2 = Question.create(body: 'Как изолировать PHP код от HTML? Для чего это нужно?', test_id: test1.id)
