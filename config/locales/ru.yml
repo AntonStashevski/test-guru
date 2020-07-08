@@ -65,3 +65,7 @@ ru:
   shared:
     errors:
       header: 'Кол-во ошибок: %{count}'
+
+  feedback:
+    feedback: 'Отзыв успешно отправлен'
+

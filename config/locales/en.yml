@@ -65,3 +65,6 @@ en:
   shared:
     errors:
       header: 'Errors count: %{count}'
+
+  feedback:
+    feedback: 'Feedback successfully send'
