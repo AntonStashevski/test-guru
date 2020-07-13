@@ -8,6 +8,8 @@ en:
         difficulty: 'Difficulty'
         questions: 'Questions'
         actions: 'Actions'
+        questions_count: 'Questions count'
+        title: 'Title'
 
       test:
         edit: 'Edit'

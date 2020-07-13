@@ -8,6 +8,8 @@ ru:
         difficulty: 'Сложность'
         questions: 'Вопросы'
         actions: 'Действия'
+        questions_count: 'Кол-во вопросов'
+        title: 'Название'
 
       test:
         edit: 'Редактировать'
