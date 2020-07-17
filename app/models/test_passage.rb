@@ -33,6 +33,10 @@ class TestPassage < ApplicationRecord
     self.test.questions.index(current_question) + 1
   end
 
+  def expired_time
+    (created_at.to_i + self.test.timer * 60) - Time.now.to_i
+  end
+
   private
 
   def before_validation_set_first_question
