@@ -5,9 +5,9 @@ class Test < ApplicationRecord
   # Категория называется определённым образом (название категории передается в метод в качестве аргумента).
   belongs_to :category # между тестами и категориями
   belongs_to :creator, class_name: :User, foreign_key: :user_id # Между Тестом и автором (Пользователем), который его создал.
-  has_many :questions, dependent: :destroy # между тестами и вопросами
-  has_many :test_passages, dependent: :destroy # между тестами и проходящими их пользователей
-  has_many :users, through: :test_passages, dependent: :destroy # между тестами и проходящими их пользователей
+  has_many :questions # между тестами и вопросами
+  has_many :test_passages # между тестами и проходящими их пользователей
+  has_many :users, through: :test_passages # между тестами и проходящими их пользователей
 
   scope :easy_tests, -> { where(difficulty: 0..1) }
   scope :medium_tests, -> { where(difficulty: 2..4) }

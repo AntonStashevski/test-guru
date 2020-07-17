@@ -37,5 +37,7 @@ Rails.application.routes.draw do
     resources :gists, only: :index
   end
 
+  resources :feedback, only: %i[new create]
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,6 +1,7 @@
 <h1><%= "Edit" %></h1>
 <%#= link_to 'Back to question', test_question_path %>
 <%= form_with model: [:admin, @answer], local: true do |form| %>
+  <%= render 'shared/errors', resource: @answer %>
   <p>
     <%= form.label :body %><br>
     <%= form.text_field :body %>

@@ -1,6 +1,7 @@
 <h1> Create new answer</h1>
 <%= link_to 'Back to tests', admin_test_questions_path %>
 <%= form_with model: [:admin, @answer.question.test, @answer.question, @answer], local: true do |form| %>
+  <%= render 'shared/errors', resource: @answer %>
   <p>
     <%= form.label :body %><br>
     <%= form.text_field :body %>

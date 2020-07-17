@@ -8,6 +8,8 @@ ru:
         difficulty: 'Сложность'
         questions: 'Вопросы'
         actions: 'Действия'
+        questions_count: 'Кол-во вопросов'
+        title: 'Название'
 
       test:
         edit: 'Редактировать'
@@ -65,3 +67,7 @@ ru:
   shared:
     errors:
       header: 'Кол-во ошибок: %{count}'
+
+  feedback:
+    feedback: 'Отзыв успешно отправлен'
+
