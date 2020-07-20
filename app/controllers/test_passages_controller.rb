@@ -21,6 +21,7 @@ class TestPassagesController < ApplicationController
   end
 
   def update
+<<<<<<< HEAD
     if @test_passage.have_time?
       @test_passage.accept!(params[:answer_ids])
 
@@ -29,6 +30,14 @@ class TestPassagesController < ApplicationController
       else
         render :show
       end
+=======
+    @test_passage.accept!(params[:answer_ids])
+
+    if @test_passage.complete?
+      BadgeService.new(@test_passage).call if @test_passage.passed?
+
+      redirect_to result_test_passage_path(@test_passage)
+>>>>>>> 87d0101... badges
     else
       flash[:timer] = t('.timeout')
       redirect_to result_test_passage_path(@test_passage)

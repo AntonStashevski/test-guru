@@ -35,6 +35,32 @@ en:
         url: 'Url'
         user: 'User'
 
+    badges:
+      index:
+        header: 'Badges'
+        title: 'Name'
+        description: 'Description'
+        image: 'Image'
+        new: 'New Badge'
+        actions: 'Actions'
+
+      new:
+        header: 'New Badge'
+
+      form:
+        value: 'Value: Category -> Category_Name, Level -> difficulty, First_try - nil'
+        first_try: 'first_try'
+        category: 'category'
+        level: 'level'
+        submit: 'submit'
+        description: 'description'
+        image: 'image'
+        title: 'title'
+
+      badge:
+        delete: 'delete'
+        confirmation: 'Are you sure?'
+
   tests:
     index:
       header: 'Tests'

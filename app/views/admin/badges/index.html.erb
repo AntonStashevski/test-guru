@@ -1,0 +1,15 @@
+<h1 class="display-4"><%= t('.header') %></h1>
+<table>
+  <table class = 'table'>
+    <tr>
+      <th scope = 'col'><%= t('.title') %></th>
+      <th scope = 'col'><%= t('.description') %></th>
+      <th scope = 'col'><%= t('.image') %></th>
+      <th scope = 'col' colspan="1" class="text-center"><%= t('.actions') %></th>
+    </tr>
+    <tbody>
+    <%= render @badges %>
+    </tbody>
+  </table>
+</table>
+<h3 class="text-center"><%= link_to t('.new'), new_admin_badge_path %></h3>
