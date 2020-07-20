@@ -1,0 +1,6 @@
+<tr>
+  <th><%= badge.title %></th>
+  <th><%= badge.description %></th>
+  <th><%= image_tag badge.image_url %></th>
+  <th><%= @user.badges.where(title: badge.title).count %></th>
+</tr>

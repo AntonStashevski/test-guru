@@ -34,6 +34,31 @@ ru:
         question: 'Вопрос'
         url: 'Адресс'
         user: 'Пользователь'
+    badges:
+      index:
+        header: 'Награды'
+        title: 'Название'
+        description: 'Описание'
+        image: 'Картинка'
+        new: 'Новое достижение'
+        actions: 'Действия'
+
+      new:
+        header: 'Новое достижение'
+
+      form:
+        value: 'Value: Category -> Category_Name, Level -> difficulty, First_try - nil'
+        first_try: 'first_try'
+        category: 'category'
+        level: 'level'
+        submit: 'Отправить'
+        description: 'Описание'
+        image: 'Ссылка на картинку'
+        title: 'Название'
+
+      badge:
+        delete: 'Удалить'
+        confirmation: 'Вы уверены?'
 
   tests:
     index:

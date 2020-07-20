@@ -15,6 +15,8 @@ class User < ApplicationRecord
   has_many :created_tests, class_name: :Test, foreign_key: :user_id # список тестов созданных пользователем
   has_many :test_passages # между тестами и проходящими их пользователей
   has_many :tests, through: :test_passages # между тестами и проходящими их пользователей
+  has_many :users_badge
+  has_many :badges, through: :users_badge
   has_many :gists
 
   validates :email, uniqueness: true

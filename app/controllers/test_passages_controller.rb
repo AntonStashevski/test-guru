@@ -24,6 +24,8 @@ class TestPassagesController < ApplicationController
     @test_passage.accept!(params[:answer_ids])
 
     if @test_passage.complete?
+      BadgeService.new(@test_passage).call if @test_passage.passed?
+
       redirect_to result_test_passage_path(@test_passage)
     else
       render :show

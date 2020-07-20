@@ -3,7 +3,9 @@
   <span class="navbar-text">
     Welcome, <b><%= current_user.email %></b> Guru |
     <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+    <%= link_to '| Badges', badges_path %>
     <%= link_to '| Admin Panel', admin_tests_path if current_user.admin? %>
     <%= link_to '| Gists', admin_gists_path if current_user.admin? %>
+    <%= link_to '| Admin Badges', admin_badges_path if current_user.admin? %>
   </span>
 </nav>
