@@ -48,6 +48,7 @@ ru:
   test_passages:
     success: 'Gist создан успешно: %{url}'
     fail: 'Gist не был создан'
+    timeout: 'Закончилось время'
     show:
       header: 'Вы проходите %{title} тест'
       questions_count: 'Кол-во вопросов: %{count}'

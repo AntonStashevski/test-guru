@@ -17,5 +17,5 @@ class Test < ApplicationRecord
 
   validates :difficulty, numericality: { only_integer: true, greater_than: 0, message: "Значение difficulty должно быть целым положительным числом" }
   validates :title, presence: true, uniqueness: { scope: :difficulty, message: "Тест с таким title и difficulty уже существует" }
-
+  validates :timer, numericality: { only_integer: true, greater_than: 0, message: "Значение timer должно быть больше еденицы" }
 end

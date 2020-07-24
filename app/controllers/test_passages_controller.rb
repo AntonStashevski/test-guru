@@ -21,12 +21,17 @@ class TestPassagesController < ApplicationController
   end
 
   def update
-    @test_passage.accept!(params[:answer_ids])
+    if @test_passage.have_time?
+      @test_passage.accept!(params[:answer_ids])
 
-    if @test_passage.complete?
-      redirect_to result_test_passage_path(@test_passage)
+      if @test_passage.complete?
+        redirect_to result_test_passage_path(@test_passage)
+      else
+        render :show
+      end
     else
-      render :show
+      flash[:timer] = t('.timeout')
+      redirect_to result_test_passage_path(@test_passage)
     end
   end
 
