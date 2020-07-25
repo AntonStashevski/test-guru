@@ -48,6 +48,7 @@ en:
     test_passages:
       success: 'Gist created successful: %{url}'
       fail: 'Gist not created'
+      timeout: 'Time is over'
       show:
         header: 'You pass %{title} test'
         questions_count: 'Questions count: %{count}'
