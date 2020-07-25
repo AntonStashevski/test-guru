@@ -6,6 +6,8 @@ class TestPassage < ApplicationRecord
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
 
+  scope :completed_tests, ->(user) { where(user_id: user.id, passed: true) }
+
   before_validation :before_validation_set_first_question, on: :create
 
   def accept!(answer_ids)
@@ -14,6 +16,7 @@ class TestPassage < ApplicationRecord
     end
 
     self.current_question = next_question
+    self.passed = true if complete?
     save
   end
 

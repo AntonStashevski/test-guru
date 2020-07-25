@@ -1,8 +1,16 @@
-<div  style=" position: absolute; bottom: 0;" >
-  <p style = 'display:inline-block'><%= year_today %></p>
-  <p style = 'display:inline-block'>Anton Stasheuski </p>
-  <p style = 'display:inline-block'>Online-tests </p>
-  <p style = 'display:inline-block'> <%= link_to 'github | ', github_url('AntonStashevski', 'test-guru'), target: :_blank %> </p>
-  <p style = 'display:inline-block'> <%= link_to 'Educational project in online school Thinknetica | ', 'https://thinknetica.com/',  target: :_blank %> </p>
-  <p style = 'display:inline-block'> <%= link_to 'Feedback', new_feedback_path,  target: :_blank %> </p>
+<!-- Footer -->
+<div class="footer fixed-bottom">
+<footer class="page-footer font-small bg-light absolute">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© <%= year_today %> Copyright:
+    <a> Anton Stasheuski</a>
+    <a><%= link_to 'github | ', github_url('AntonStashevski', 'test-guru'), target: :_blank %></a>
+    <a><%= link_to 'Educational project in online school Thinknetica | ', 'https://thinknetica.com/',  target: :_blank %></a>
+    <a><%= link_to 'Feedback', new_feedback_path,  target: :_blank %></a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
 </div>
+<!-- Footer -->

@@ -1,0 +1,6 @@
+<tr>
+  <th><%= badge.title %></th>
+  <th><%= badge.description %></th>
+  <th><%= image_tag badge.image_url %></th>
+  <td><%= link_to t('.delete'), admin_badge_path(badge), method: :delete, data: { confirm: t('.confirmation')} %></td>
+</tr>
